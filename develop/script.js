@@ -24,7 +24,26 @@ if (upperCase === false && lowerCase === false && numbChara === false && specCha
   var specChara = confirm("How about some special characters to top it off?");
 }
 
-/* set arrays for above variables
+// set arrays for above var (attempt with Charset)
+
+function getRandomUpper(){
+  return String.fromCharCode(Math.floor(Math.random() * 26) + 65);
+}
+
+function getRandomLower(){
+  return String.fromCharCode(Math.floor(Math.random() * 26) + 97);
+}
+
+function getRandomNumber(){
+  return String.fromCharCode(Math.floor(Math.random() * 10) + 48);
+}
+
+function getRandomSymbol(){
+  const symbols = "!@#$%^&*(){}[]=<>,.'";
+  return symbols[Math.floor(Math.random() * symbols.length)];
+}
+
+/* set arrays for above variables 
 var uCaseLet = {
   return String.fromCharCode(Math.floor(Math.random() * 26) + 65);
   !!!try to add charset values instead of typing out each char. Working on this!!!
