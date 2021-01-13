@@ -13,4 +13,4 @@
 (https://github.com/lukenorys/password-generator)
 
 ## Deployed Link (on click) / ScreenShot
-[![mainPageScreenshot](./assets/pwgen.png)](https://lukenorys.github.io/password-generator/)
+[![mainPageScreenshot](pwgen.png)](https://lukenorys.github.io/password-generator/)
