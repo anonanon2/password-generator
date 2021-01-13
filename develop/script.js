@@ -30,6 +30,19 @@ var lowerCase = ["a","b","c","d","e","f","g","h","i","j","k","l","m","n","o","p"
 var numbChara = ["0","1","2","3","4","5","6","7","8","9"]
 var specChara = ["!","@","#","$","%","^","&","*","(",")","/",">","<","-","_",":",";","[","]","{","}","|"]
 
+var password = "";
+
+// password iterator and return
+for (var i = 0; i <= passwordLength; i++) {
+  let upperCaseRandom = upperCase[Math.floor(Math.random() * upperCase.length)];
+  let lowerCaseRandom = lowerCase[Math.floor(Math.random() * lowerCase.length)];
+  let numbCharaRandom = numerical[Math.floor(Math.random() * numerical.length)];
+  let specCharaRandom = special[Math.floor(Math.random() * special.length)];
+}
+
+// index starting point at 0
+var randomNumber = 0;
+
 // Get references to the #generate element
 var generateBtn = document.querySelector("#generate");
 
