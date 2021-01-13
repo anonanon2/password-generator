@@ -24,31 +24,11 @@ if (upperCase === false && lowerCase === false && numbChara === false && specCha
   var specChara = confirm("How about some special characters to top it off?");
 }
 
-// set arrays for above var (attempt with Charset)
-
-function getRandomUpper(){
-  return String.fromCharCode(Math.floor(Math.random() * 26) + 65);
-}
-
-function getRandomLower(){
-  return String.fromCharCode(Math.floor(Math.random() * 26) + 97);
-}
-
-function getRandomNumber(){
-  return String.fromCharCode(Math.floor(Math.random() * 10) + 48);
-}
-
-function getRandomSymbol(){
-  const symbols = "!@#$%^&*(){}[]=<>,.'";
-  return symbols[Math.floor(Math.random() * symbols.length)];
-}
-
-/* set arrays for above variables 
-var uCaseLet = {
-  return String.fromCharCode(Math.floor(Math.random() * 26) + 65);
-  !!!try to add charset values instead of typing out each char. Working on this!!!
-}
-*/
+// set arrays for above var (attempt with Charset as a second method at a later date)
+var upperCase = ["A","B","C","D","E","F","G","H","I","J","K","L","M","N","O","P","Q","R","S","T","U","V","W","X","Y","Z"]
+var lowerCase = ["a","b","c","d","e","f","g","h","i","j","k","l","m","n","o","p","q","r","s","t","u","v","w","x","y","z"]
+var numbChara = ["0","1","2","3","4","5","6","7","8","9"]
+var specChara = ["!","@","#","$","%","^","&","*","(",")","/",">","<","-","_",":",";","[","]","{","}","|"]
 
 // Get references to the #generate element
 var generateBtn = document.querySelector("#generate");
