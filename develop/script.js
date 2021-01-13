@@ -1,5 +1,5 @@
 // Assignment Code
-var generateBtn = document.querySelector("#generate");	var generateBtn = document.querySelector("#generate");
+var generateBtn = document.querySelector("#generate");
 
 // define variables
 var generate = confirm("Please enter your criteria for a random password in the following prompts.");
@@ -11,7 +11,7 @@ var specChara = confirm("How about some special characters to top it off?");
 
 // password length alert/response
 if (pwLength < 8 || pwLength > 128) {
-  alert("Select your password length.")
+  alert("Please. select an appropriate password length.")
   var pwLength = prompt("Please enter your criteria for a random password in the following prompts.")
 }
 
@@ -25,35 +25,65 @@ if (upperCase === false && lowerCase === false && numbChara === false && specCha
 }
 
 // set arrays for above var (attempt with Charset as a second method at a later date)
-var upperCase = ["A","B","C","D","E","F","G","H","I","J","K","L","M","N","O","P","Q","R","S","T","U","V","W","X","Y","Z"]
-var lowerCase = ["a","b","c","d","e","f","g","h","i","j","k","l","m","n","o","p","q","r","s","t","u","v","w","x","y","z"]
-var numbChara = ["0","1","2","3","4","5","6","7","8","9"]
-var specChara = ["!","@","#","$","%","^","&","*","(",")","/",">","<","-","_",":",";","[","]","{","}","|"]
+var upperCaseLetters = ["A","B","C","D","E","F","G","H","I","J","K","L","M","N","O","P","Q","R","S","T","U","V","W","X","Y","Z"]
+var lowerCaseLetters = ["a","b","c","d","e","f","g","h","i","j","k","l","m","n","o","p","q","r","s","t","u","v","w","x","y","z"]
+var numbCharaNum = ["0","1","2","3","4","5","6","7","8","9"]
+var specCharaSymbol = ["!","@","#","$","%","^","&","*","(",")","/",">","<","-","_",":",";","[","]","{","}","|"]
 
-var password = "";
+var pw = "";
 
 // password iterator and return
-for (var i = 0; i <= passwordLength; i++) {
-  let upperCaseRandom = upperCase[Math.floor(Math.random() * upperCase.length)];
-  let lowerCaseRandom = lowerCase[Math.floor(Math.random() * lowerCase.length)];
-  let numbCharaRandom = numerical[Math.floor(Math.random() * numerical.length)];
-  let specCharaRandom = special[Math.floor(Math.random() * special.length)];
-}
+for (var i = 0; i <= pwLength; i++) {
+  let upperCaseRandom = upperCaseLetters[Math.floor(Math.random() * upperCaseLetters.length)];
+  let lowerCaseRandom = lowerCaseLetters[Math.floor(Math.random() * lowerCaseLetters.length)];
+  let numbCharaRandom = numbCharaNum[Math.floor(Math.random() * numbCharaNum.length)];
+  let specCharaRandom = specCharaSymbol[Math.floor(Math.random() * specCharaSymbol.length)];
 
-// index starting point at 0
-var randomNumber = 0;
+  // index starting point at 0
+  var ranNumber = 0;
 
-// Get references to the #generate element
-var generateBtn = document.querySelector("#generate");
+  if (upperCase === true) {
+    ranNumber++
+  }
+  if (lowerCase === true) {
+    ranNumber++
+  }
+  if (numbChara === true) {
+    ranNumber++
+  }
+  if (specChara === true) {
+    ranNumber++
+  }
 
-// Write password to the #password input
-function writePassword() {
-  var password = generatePassword();
-  var passwordText = document.querySelector("#password");
+  //create random indexing
+  var ranIndex = Math.floor(Math.random() * ranNumber)
+  var ranArray =[];
+    if (upperCase === true){
+      ranArray.push(upperCaseRandom)
+    }
+    if (lowerCase === true) {
+      ranArray.push(lowerCaseRandom)
+    }
+    if (numbChara === true) {
+      ranArray.push(numbCharaRandom)
+    }
+    if (specChara === true) {
+      ranArray.push(specCharaRandom)
+    }
+    {
+    pw+=ranArray[ranIndex];
+    ranArray =[]
+    console.log(pw)
+    }
+  }
 
-  passwordText.value = password;
-
-}
+  // Password output
+  function createPassword () {
+    var password = pw.substring(0,pw.length-1);
+    var passwordText = document.querySelector("#password");
+    passwordText.value = password;
+  
+  }
 
 // Add event listener to generate button
-generateBtn.addEventListener("click", writePassword);
+generateBtn.addEventListener("click", createPassword);
